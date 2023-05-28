@@ -23,14 +23,13 @@ The classic SDM is given by
 
 $$y_t = \rho W y_t + X_t \beta + \epsilon_t$$
 
-This package models balanced panel data $y = \{ y_{ijt} | i=1,\ldots,I, j=1,\ldots,J, t=1,\ldots,T \}$ where every cross-section has $N = IJ$ units.
+This package models balanced panel data $y = \lbrace y_{ijt} | i=1,\ldots,I, j=1,\ldots,J, t=1,\ldots,T \rbrace$ where every cross-section has $N = IJ$ units.
 
 The extended model is given by
 
 $$y_t = R_t W_t y_t + X_t \beta + \epsilon_t, \quad \epsilon_t \overset{iid}{\sim} p(\epsilon_t; \Sigma_t, \nu)$$
 
-<!--Here, $y_t$ is an $N$ vector with a lexicographic ordered two-dimensional index $i,j$.-->
-We define $R_t = \rho_t \otimes \mathbf{I}_J$ with $\rho_t$ an $I$ dimensional vector.
+We define $R_t = \rho_t \otimes \mathbf{I}_ J$ with $\rho_t$ an $I$ dimensional vector.
 This assumes group $i$ specific time-varying spatial dependence parameters $\rho_{it}$ for $i=1, \ldots, I$ and $t = 1, \ldots, T$.
 
 We endow the spatial dependence parameter with time series dynamics using the score framework.
@@ -48,7 +47,7 @@ The link to the spatial dependence parameter is introduced through $\rho_{it} = 
 The package is currently not published to PyPi.
 Yet, it can be installed through
 
-```bash
+```
 pip install -e <path-to-root>
 ```
 
