@@ -1,0 +1,130 @@
+/* file: custom.css
+ * For Sphinx + alabaster theme.
+ * Purpose: Scroll sidebar and doc window independently;
+ *          remove sidebar bullets; adjust font size.
+ * Put into source/_static in your Sphinx doc directory.
+ *
+ * Tom Hilinski <https://gist.github.com/tehilinski>
+ */
+
+ html, body {
+    height: 100%;
+    font-family: Liberation Sans, DejaVu Sans, sans serif, sans;
+}
+
+div.body {
+    font-size: 100%;
+}
+
+div.document {
+    height: 100%;
+    overflow-y: hidden;
+    padding-left: +2em;
+}
+
+div.documentwrapper {
+    height: 100%;
+    overflow-y: auto;
+    position: initial;
+}
+
+div.sphinxsidebar {
+    height: 100%;
+    overflow-y: auto;
+    position: initial;
+    font-size: 95%;
+}
+
+/* remove bullet markers in TOC */
+div.sphinxsidebar ul li.toctree-l1 {
+    list-style-type: none;
+}
+
+div.sphinxsidebar ul li.toctree-l2 {
+    list-style-type: none;
+}
+
+div.sphinxsidebar ul li.toctree-l3 {
+    list-style-type: none;
+}
+
+div.sphinxsidebar h3
+{
+    text-indent: 0;
+    font-size: 105%;
+    margin-left: 1em;
+}
+
+/* sidebar caption font */
+div.sphinxsidebar p.caption {
+    font-weight: bold;
+    font-size: 130%;
+}
+
+/* notes and warnings */
+
+div.note {
+    margin-left: 4em;
+    margin-right: 4em;
+    background-color: #F5F5F5;	/* lighten */
+}
+
+div.admonition p.admonition-title {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+div.admonition p.last {
+    font-size: 100%;
+}
+
+div.warning {
+    background-color: #FFEDED;
+}
+
+/* pre background will be lighter; no italics */
+pre, tt, code {
+    background-color: #F5F5F5;
+    font-size: 95%;
+    font-family: Liberation Mono, DejaVu San Mono, Monospace, fixed;
+}
+
+.highlight .c1 {
+    font-style: normal;
+}
+
+/* body headers */
+
+div.body h1, div.body h2, div.body h3 {
+    font-family: Liberation Sans, DejaVu Sans, sans serif, sans;
+    font-weight: bold;
+}
+
+div.body h1 {
+    text-indent: -1em;
+    font-size: 170%;
+    margin-top: 2em;
+}
+
+div.body h2 {
+    text-indent: -1em;
+    font-size: 150%;
+}
+
+div.body h3 {
+    font-size: 130%;
+}
+
+div.body h4 {
+    font-size: 115%;
+    font-family: Liberation Serif, DejaVu Serif, serif, sans;
+    font-weight: bold;
+}
+
+/* tables */
+
+table.docutils td, table.docutils th {
+    border-color: #E5E5E5;	/* lighten */
+}
+
+/* end */

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Inhoffen
+    given-names: Justus
+title: "Spatial Durbin Model with Time Dynamics and Heterogeneity for Panel Data"
+version: 0.0.1
+date-released: 2023-05-26
+url: "https://github.com/jinhoffen/sgm"
