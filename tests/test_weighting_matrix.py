@@ -18,9 +18,8 @@ def test_shape_consistency():
 
     with pytest.raises(ValueError):
         adjacency_matrix = sdm.AdjacencyMatrix()
-        adjacency_matrix.add(0, 10, 0, matrices[0])
-        adjacency_matrix.add(0, 10, 0, matrices[1])
-
+        adjacency_matrix.add(0, 10, matrices[0])
+        adjacency_matrix.add(10, 20, matrices[1])
 
 def test_isolated_unit():
     """all cross section units must have at least one connection"""
@@ -32,7 +31,7 @@ def test_isolated_unit():
 
     with pytest.raises(ValueError):
         adjacency_matrix = sdm.AdjacencyMatrix()
-        adjacency_matrix.add(0, 10, 0, matrix)
+        adjacency_matrix.add(0, 10, matrix)
 
 
 def test_self_link():
@@ -45,7 +44,7 @@ def test_self_link():
 
     with pytest.raises(ValueError):
         adjacency_matrix = sdm.AdjacencyMatrix()
-        adjacency_matrix.add(0, 10, 0, matrix)
+        adjacency_matrix.add(0, 10, matrix)
 
 def test_row_normalization():
     """test row normalization"""
@@ -80,47 +79,26 @@ def test_build():
     ]
 
     adjacency_matrix = sdm.AdjacencyMatrix()
-    adjacency_matrix.add(0, 3, 0, matrices[0])
-    adjacency_matrix.add(0, 3, 1, matrices[1])
+    adjacency_matrix.add(0, 2, matrices[0])
+    adjacency_matrix.add(2, 3, matrices[1])
     weighting_matrix = adjacency_matrix.build()
 
-    # matrix of dimensions 3 x 2 x 3 x 3
+    # matrix of dimensions 3 x 3 x 3
     expected = np.array([
         [
-            [
-                [0,1/3,2/3],
-                [1,0,0],
-                [1/2,1/2,0]
-            ],
-            [
-                [0,2/3,1/3],
-                [1/2,0,1/2],
-                [1,0,0]
-            ],
+            [0,1/3,2/3],
+            [1,0,0],
+            [1/2,1/2,0]
         ],
         [
-            [
-                [0,1/3,2/3],
-                [1,0,0],
-                [1/2,1/2,0]
-            ],
-            [
-                [0,2/3,1/3],
-                [1/2,0,1/2],
-                [1,0,0]
-            ],
+            [0,1/3,2/3],
+            [1,0,0],
+            [1/2,1/2,0]
         ],
         [
-            [
-                [0,1/3,2/3],
-                [1,0,0],
-                [1/2,1/2,0]
-            ],
-            [
-                [0,2/3,1/3],
-                [1/2,0,1/2],
-                [1,0,0]
-            ],
+            [0,2/3,1/3],
+            [1/2,0,1/2],
+            [1,0,0]
         ]
     ])
 
