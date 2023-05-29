@@ -1,9 +1,9 @@
 import numpy as np
 
-from sgm import utils
+from sdm import utils
 
 def test_flatten_parameters():
-    """Test flatten_parameters"""
+    """Test flattening of parameters"""
     # test data
     arr_lengths = (2, 6, 2, 1)
 
@@ -21,9 +21,8 @@ def test_flatten_parameters():
 
     assert np.array_equal(res, expected)
 
-
 def test_rebuild_parameters():
-    """Test rebuild_parameters"""
+    """Test rebuilding of parameters"""
     params = np.arange(10)
     lengths = (3, 5, 1)
     arrs = utils.rebuild_parameters(params, *lengths)
